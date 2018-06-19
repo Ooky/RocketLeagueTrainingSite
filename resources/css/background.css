@@ -2,9 +2,11 @@ body, html {
   height: 100%;
 }
 
-#background {
-  background-image: url("../images/background/rl_background01.png");
+#background  {
+  position: relative;
   height: 100%;
+  background-image: url("../images/background/rl_background01.png");
+  /* position: relative; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
