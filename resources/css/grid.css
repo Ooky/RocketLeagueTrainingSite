@@ -1,13 +1,26 @@
-.grid-container {
+:root {
+  --topSpace: 20%;
+}
+
+.grid-container-header {
   position: absolute;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* background-color: red; */
-  padding: 5%;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-container-tiles {
+  position: absolute;
+  top: var(--topSpace);
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 2%;
   grid-gap: 5%;
 }
 
@@ -15,4 +28,9 @@
   background-color: blue;
   font-size: 30px;
   text-align: center;
+}
+
+.grid-item01 {
+  grid-column: span 4;
+  height: var(--topSpace);
 }
