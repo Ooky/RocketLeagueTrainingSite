@@ -13,7 +13,7 @@ body {
 
 .grid-container-header {
   position: absolute;
-  top: 0px;
+  top: 2%;
   right: 0px;
   bottom: 0px;
   left: 0px;
@@ -29,18 +29,12 @@ body {
   left: 0px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 2%;
+  padding: 2% 6% 2% 6%;
   grid-gap: 5%;
 }
 
-/* border: solid red 1px; */
-
 .grid-item {
-  font-size: 5em;
   text-align: center;
-  background-color: black;
-  opacity: 0.8;
-  color: white;
 }
 
 .grid-item01 {
@@ -48,6 +42,18 @@ body {
   height: var(--topSpace);
   margin: 0% 2% 0% 2%;
   font-size: 8em;
-  text-shadow: 6px 6px 1px white, -6px -6px 1px white, 6px -6px 1px white, -6px 6px 1px white;
+  text-shadow: 5px 5px 2px white, -5px -5px 2px white, 5px -5px 2px white, -5px 5px 2px white;
   color: black;
+}
+
+.grid-item01:hover {
+  transition: 0.5s;
+  text-shadow: 5px 5px 10px white, -5px -5px 10px white, 5px -5px 10px white, -5px 5px 10px white;
+}
+
+.grid-tiles {
+  font-size: 5em;
+  background-color: black;
+  opacity: 0.8;
+  color: white;
 }
