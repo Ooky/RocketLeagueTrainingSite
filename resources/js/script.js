@@ -2,10 +2,10 @@
 let gridItems = document.getElementsByClassName('grid-item');
 let gridTileHeight = gridItems[0].clientHeight;
 
-let cars = [
-  "rl_background01.png",
-  "rl_background02.jpg",
-  "rl_background03.jpg"
+let backgrounds = [
+  "resources/images/background/rl_background01.png",
+  "resources/images/background/rl_background02.jpg",
+  "resources/images/background/rl_background03.jpg"
 ];
 
 startFunction();
@@ -16,8 +16,9 @@ function startFunction() {
 }
 
 function setBackground() {
+  let randomBackground = Math.floor((Math.random() * backgrounds.length));
   let background = document.getElementById("background");
-  background.style.backgroundImage = "url('resources/images/background/rl_background01.png')";
+  background.style.backgroundImage = "url("+backgrounds[randomBackground]+")";
 }
 
 
