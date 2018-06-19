@@ -33,10 +33,14 @@ body {
   grid-gap: 5%;
 }
 
+/* border: solid red 1px; */
+
 .grid-item {
-  border: solid red 1px;
   font-size: 5em;
   text-align: center;
+  background-color: black;
+  opacity: 0.8;
+  color: white;
 }
 
 .grid-item01 {
@@ -44,4 +48,6 @@ body {
   height: var(--topSpace);
   margin: 0% 2% 0% 2%;
   font-size: 8em;
+  text-shadow: 6px 6px 1px white, -6px -6px 1px white, 6px -6px 1px white, -6px 6px 1px white;
+  color: black;
 }
