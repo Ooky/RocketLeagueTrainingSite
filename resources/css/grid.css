@@ -2,6 +2,15 @@
   --topSpace: 20%;
 }
 
+@font-face {
+  font-family: "MicroFLF-Bold";
+  src: url("../fonts/MicroFLF-Bold.ttf.woff") format('woff');
+}
+
+body {
+  font-family: MicroFLF-Bold;
+}
+
 .grid-container-header {
   position: absolute;
   top: 0px;
@@ -25,12 +34,14 @@
 }
 
 .grid-item {
-  background-color: blue;
-  font-size: 30px;
+  border: solid red 1px;
+  font-size: 5em;
   text-align: center;
 }
 
 .grid-item01 {
   grid-column: span 4;
   height: var(--topSpace);
+  margin: 0% 2% 0% 2%;
+  font-size: 8em;
 }
