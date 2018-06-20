@@ -37,7 +37,7 @@ body {
   text-align: center;
 }
 
-.grid-item01 {
+#grid-item1 {
   grid-column: span 4;
   height: var(--topSpace);
   margin: 0% 2% 0% 2%;
@@ -46,7 +46,7 @@ body {
   color: black;
 }
 
-.grid-item01:hover {
+#grid-item1:hover {
   transition: 0.5s;
   text-shadow: 5px 5px 10px white, -5px -5px 10px white, 5px -5px 10px white, -5px 5px 10px white;
 }
@@ -57,3 +57,14 @@ body {
   opacity: 0.8;
   color: white;
 }
+
+/* #grid-item2 {
+  grid-row-start: 1;
+  grid-row-end: -1;
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+#grid-item3, #grid-item4, #grid-item5, #grid-item6, #grid-item7, #grid-item8, #grid-item9, #grid-item10,  #grid-item11, #grid-item12, #grid-item13 {
+  display:none;
+} */

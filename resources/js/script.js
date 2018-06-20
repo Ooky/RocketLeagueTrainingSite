@@ -1,7 +1,8 @@
 "use strict";
 let gridItems = document.getElementsByClassName('grid-item');
-
-window.addEventListener('resize', centerTileText);
+let gridContainerTilesChildNodes = document.getElementsByClassName("grid-container-tiles")[0].childNodes;
+let trainingTiles = [];
+let isMaximazed = false;
 
 let backgrounds = [
   "resources/images/background/rl_background01.png",
@@ -12,8 +13,45 @@ let backgrounds = [
 startFunction();
 
 function startFunction() {
+  window.addEventListener('resize', centerTileText);
   centerTileText();
   setBackground();
+  initTrainingTiles();
+  addEventListenerToGridTiles();
+}
+
+function initTrainingTiles() {
+  for (let i = 1; i < gridContainerTilesChildNodes.length; i += 2) {
+    trainingTiles.push(gridContainerTilesChildNodes[i]);
+  }
+}
+
+function addEventListenerToGridTiles() {
+  let startTileID = 2;
+  for (let i = 0; i < trainingTiles.length; i++) {
+    let id = "grid-item" + (i + startTileID);
+    document.getElementById(id).addEventListener("click", tileInfo);
+  }
+}
+
+function tileInfo() {
+  if (!isMaximazed) {
+    //Maximize Tile
+    for (let i = 0; i < trainingTiles.length; i++) {
+      if (this.id != trainingTiles[i].id) {
+        trainingTiles[i].style.display = "none";
+      } else {
+        this.style.gridArea = "1 / 1 / -1 / -1";
+      }
+    }
+    isMaximazed = true;
+  } else {
+    for (let i = 0; i < trainingTiles.length; i++) {
+      trainingTiles[i].style.display = "inline";
+      trainingTiles[i].style.gridArea = "auto";
+    }
+    isMaximazed = false;
+  }
 }
 
 function setBackground() {
@@ -21,8 +59,6 @@ function setBackground() {
   let background = document.getElementById("background");
   background.style.backgroundImage = "url(" + backgrounds[randomBackground] + ")";
 }
-
-
 
 function centerTileText() {
   let gridTileHeight = gridItems[0].clientHeight;
