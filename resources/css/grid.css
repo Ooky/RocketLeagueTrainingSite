@@ -47,8 +47,8 @@ body {
 }
 
 #grid-item1:hover {
-  transition: 0.5s;
-  text-shadow: 5px 5px 10px white, -5px -5px 10px white, 5px -5px 10px white, -5px 5px 10px white;
+  transition: 0.1s;
+  text-shadow: 5px 5px 6px white, -5px -5px 6px white, 5px -5px 6px white, -5px 5px 6px white;
 }
 
 .grid-tiles {
@@ -57,14 +57,3 @@ body {
   opacity: 0.8;
   color: white;
 }
-
-/* #grid-item2 {
-  grid-row-start: 1;
-  grid-row-end: -1;
-  grid-column-start: 1;
-  grid-column-end: -1;
-}
-
-#grid-item3, #grid-item4, #grid-item5, #grid-item6, #grid-item7, #grid-item8, #grid-item9, #grid-item10,  #grid-item11, #grid-item12, #grid-item13 {
-  display:none;
-} */

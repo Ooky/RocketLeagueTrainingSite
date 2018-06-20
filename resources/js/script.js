@@ -45,6 +45,7 @@ function tileInfo() {
       }
     }
     isMaximazed = true;
+    //Minimize Tile
   } else {
     for (let i = 0; i < trainingTiles.length; i++) {
       trainingTiles[i].style.display = "inline";
