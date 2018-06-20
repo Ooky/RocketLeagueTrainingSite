@@ -1,6 +1,7 @@
 "use strict";
 let gridItems = document.getElementsByClassName('grid-item');
-let gridTileHeight = gridItems[0].clientHeight;
+
+window.addEventListener('resize', centerTileText);
 
 let backgrounds = [
   "resources/images/background/rl_background01.png",
@@ -18,11 +19,13 @@ function startFunction() {
 function setBackground() {
   let randomBackground = Math.floor((Math.random() * backgrounds.length));
   let background = document.getElementById("background");
-  background.style.backgroundImage = "url("+backgrounds[randomBackground]+")";
+  background.style.backgroundImage = "url(" + backgrounds[randomBackground] + ")";
 }
 
 
+
 function centerTileText() {
+  let gridTileHeight = gridItems[0].clientHeight;
   for (let i = 0; i < gridItems.length; i++) {
     gridItems[i].style.lineHeight = gridTileHeight + "px";
   }
