@@ -10,7 +10,7 @@ startFunction();
 
 function startFunction() {
   window.addEventListener('resize', centerTileText);
-  window.addEventListener('resize', resizeVideos);
+  // window.addEventListener('resize', resizeVideos);
   generateJSONObject("resources/json/data.json");
   centerTileText();
   setBackground();
