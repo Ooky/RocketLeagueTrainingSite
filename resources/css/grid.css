@@ -1,5 +1,5 @@
 :root {
-  --topSpace: 20%;
+  --topSpace: 20vh;
 }
 
 @font-face {
@@ -19,6 +19,7 @@ body {
   left: 0px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  text-align: center;
 }
 
 .grid-container-tiles {
@@ -31,10 +32,6 @@ body {
   grid-template-columns: repeat(4, 1fr);
   padding: 2% 6% 2% 6%;
   grid-gap: 5%;
-}
-
-.grid-item {
-  text-align: center;
 }
 
 #grid-item1 {

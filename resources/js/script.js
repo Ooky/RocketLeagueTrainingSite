@@ -20,12 +20,19 @@ function startFunction() {
 }
 
 function resizeVideos() {
+  let elements = document.getElementsByClassName("grid-tiles");
+  for(let i = 0; i< elements.length; i++) {
+    elements[i].style.height = "20vh";
+    // elements[i].style.width = "calc(100vw -12%)";
+  }
+
+
   let videos = document.getElementsByTagName("video");
-  let width = getWidthOfTile(trainingTiles[0].id) + 1;
-  let height = getHeightOfTile("grid-item2") + 1;
+  let width = getWidthOfTile(trainingTiles[0].id);
+  let height = getHeightOfTile("grid-item2");
   for (let i = 0; i < videos.length; i++) {
-    // videos[i].width = width;
-    // videos[i].height = height;
+    videos[i].width = width;
+    videos[i].height = height;
   }
 }
 
