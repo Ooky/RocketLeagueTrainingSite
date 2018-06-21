@@ -57,3 +57,7 @@ body {
   opacity: 0.8;
   color: white;
 }
+
+video {
+  object-fit: cover;
+}

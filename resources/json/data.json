@@ -1,0 +1,61 @@
+{
+  "backgrounds": [{
+      "name": "rl_background01.png"
+    },
+    {
+      "name": "rl_background02.jpg"
+    },
+    {
+      "name": "rl_background03.jpg"
+    },
+    {
+      "name": "rl_background04.jpg"
+    },
+    {
+      "name": "rl_background05.jpg"
+    },
+    {
+      "name": "rl_background06.jpg"
+    },
+    {
+      "name": "rl_background07.jpg"
+    }
+  ],
+  "webms": [{
+      "name": "Training01-20min.webm"
+    },
+    {
+      "name": "Training02-5min.webm"
+    },
+    {
+      "name": "Training03-5min.webm"
+    },
+    {
+      "name": "Training04-5min.webm"
+    },
+    {
+      "name": "Training05-5min.webm"
+    },
+    {
+      "name": "Training06-5min.webm"
+    },
+    {
+      "name": "Training07-5min.webm"
+    },
+    {
+      "name": "Training08-5min.webm"
+    },
+    {
+      "name": "Training09-5min.webm"
+    },
+    {
+      "name": "Training10-5min.webm"
+    },
+    {
+      "name": "Training11-5min.webm"
+    },
+    {
+      "name": "Training12-5min.webm"
+    }
+  ]
+}
