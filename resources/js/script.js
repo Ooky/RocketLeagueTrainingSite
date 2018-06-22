@@ -9,6 +9,7 @@ let oldTileHeight;
 let tileBoundariesSet = false;
 let videos = null;
 const startTile = 2;
+let pText = null;
 
 
 startFunction();
@@ -30,7 +31,10 @@ function addTextToVideos() {
     for (let i = 0; i < trainingTiles.length; i++) {
       let id = "grid-item" + (i + startTile);
       let div = document.createElement("div");
+      div.addEventListener("mouseenter", playVideo);
+      div.addEventListener("mouseleave", pauseVideo);
       div.setAttribute("class", "videoText");
+      div.setAttribute("id", (i + startTile));
       let element = document.getElementById(id);
       element.appendChild(div);
       let pTag = document.createElement("p");
@@ -38,23 +42,27 @@ function addTextToVideos() {
       pTag.appendChild(description);
       div.appendChild(pTag);
     }
+    pText = document.getElementsByTagName("p");
   } else {
     window.setTimeout(addTextToVideos, 100);
   }
 }
 
 function playVideo() {
-  this.play();
+  videos[this.id - startTile].play();
   for (let i = 0; i < videos.length; i++) {
     videos[i].style.opacity = "0.3";
+    pText[i].style. opacity = "0.1";
   }
-  this.style.opacity = "1";
+  videos[this.id - startTile].style.opacity = "1";
+  pText[this.id - startTile].style. opacity = "0.5";
 }
 
 function pauseVideo() {
-  this.pause();
+  videos[this.id - startTile].pause();
   for (let i = 0; i < videos.length; i++) {
     videos[i].style.opacity = "0.8";
+    pText[i].style. opacity = "0.7";
   }
 }
 
@@ -121,8 +129,8 @@ function addVideosToHTML() {
       video.setAttribute("width", width);
       video.setAttribute("height", height);
 
-      video.addEventListener("mouseenter", playVideo);
-      video.addEventListener("mouseleave", pauseVideo);
+      // video.addEventListener("mouseenter", playVideo);
+      // video.addEventListener("mouseleave", pauseVideo);
       // video.setAttribute("autoplay", "");
       video.setAttribute("loop", "");
       video.setAttribute("muted", "");
