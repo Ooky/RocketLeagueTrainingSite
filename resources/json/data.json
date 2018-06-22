@@ -1,39 +1,63 @@
 {
   "videoInfo": [{
-      "time": "20"
+      "time": "20",
+      "description": "Dribble Challenge 2.0",
+      "ballcam" : "no"
     },
     {
-      "time": "5"
+      "time": "5",
+      "description": "Fly around",
+      "ballcam" : "no"
     },
     {
-      "time": "5"
+      "time": "5",
+      "description": "Fly around Ball",
+      "ballcam" : "yes"
     },
     {
-      "time": "5"
+      "time": "5",
+      "description": "Fly around Ball",
+      "ballcam" : "yes"
     },
     {
-      "time": "5"
+      "time": "5",
+      "description": "Fly around Field",
+      "ballcam" : "no"
     },
     {
-      "time": "5"
+      "time": "5",
+      "description": "Fly around Field",
+      "ballcam" : "no"
     },
     {
-      "time": "5"
+      "time": "5",
+      "description": "Ground slides",
+      "ballcam" : "no"
     },
     {
-      "time": "5"
+      "time": "5",
+      "description": "Half Flip",
+      "ballcam" : "both"
     },
     {
-      "time": "5"
+      "time": "5",
+      "description": "Trainer: Toonfish",
+      "ballcam" : "yes"
     },
     {
-      "time": "5"
+      "time": "5",
+      "description": "Trainer: Kevpert Wall Powerclears",
+      "ballcam" : "yes"
     },
     {
-      "time": "5"
+      "time": "5",
+      "description": "Trainer: Kevpert Back Wall Defense",
+      "ballcam" : "yes"
     },
     {
-      "time": "10"
+      "time": "10",
+      "description": "Biddles Consistency",
+      "ballcam" : "yes"
     }
   ],
   "backgrounds": [{
