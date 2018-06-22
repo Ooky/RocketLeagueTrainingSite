@@ -19,6 +19,13 @@ function startFunction() {
   addVideosToHTML();
 }
 
+function playVideo() {
+  this.play();
+}
+function pauseVideo(){
+  this.pause();
+}
+
 function resizeVideos() {
   let elements = document.getElementsByClassName("grid-tiles");
   for(let i = 0; i< elements.length; i++) {
@@ -47,6 +54,13 @@ function addVideosToHTML() {
       let video = document.createElement("video");
       video.setAttribute("width", width);
       video.setAttribute("height", height);
+
+      video.addEventListener("mouseenter", playVideo);
+      video.addEventListener("mouseleave", pauseVideo);
+      // video.setAttribute("autoplay", "");
+      video.setAttribute("loop", "");
+      video.setAttribute("muted", "");
+
       let source = document.createElement("source");
       source.setAttribute("src", "resources/videos/webm/" + jsonObject.webms[i].name);
       source.setAttribute("type", "video/webm");
