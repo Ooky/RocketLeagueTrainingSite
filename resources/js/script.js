@@ -7,6 +7,7 @@ let jsonObject = null;
 let oldTileWidth;
 let oldTileHeight;
 let tileBoundariesSet = false;
+let videos = null;
 
 
 startFunction();
@@ -24,10 +25,17 @@ function startFunction() {
 
 function playVideo() {
   this.play();
+  for (let i = 0; i < videos.length; i++) {
+    videos[i].style.opacity = "0.3";
+  }
+  this.style.opacity = "1";
 }
 
 function pauseVideo() {
   this.pause();
+  for (let i = 0; i < videos.length; i++) {
+    videos[i].style.opacity = "0.8";
+  }
 }
 
 function resizeVideos() {
@@ -36,7 +44,6 @@ function resizeVideos() {
     elements[i].style.height = "20vh";
     // elements[i].style.width = "calc(100vw -12%)";
   }
-  let videos = document.getElementsByTagName("video");
   let width = getWidthOfTile(trainingTiles[0].id);
   let height = getHeightOfTile("grid-item2");
   for (let i = 0; i < videos.length; i++) {
@@ -111,6 +118,7 @@ function addVideosToHTML() {
   } else {
     window.setTimeout(addVideosToHTML, 100);
   }
+  videos = document.getElementsByTagName("video");
 }
 
 function getWidthOfTile(id) {
