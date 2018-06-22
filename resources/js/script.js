@@ -21,6 +21,26 @@ function startFunction() {
   initTrainingTiles();
   addVideosToHTML();
   addEventListenerToGridTiles();
+  addTextToVideos();
+}
+
+function addTextToVideos() {
+  if (jsonObject != null) {
+    let div = document.createElement("div");
+    div.setAttribute("class", "videoText");
+    let element = document.getElementById("grid-item2");
+    element.appendChild(div);
+    let br = document.createElement("br");
+    let pTag = document.createElement("p");
+    let description = document.createTextNode("Dribbling");
+    let time = document.createTextNode("20min");
+    pTag.appendChild(description);
+    pTag.appendChild(br);
+    pTag.appendChild(time);
+    div.appendChild(pTag);
+  } else {
+    window.setTimeout(addTextToVideos, 100);
+  }
 }
 
 function playVideo() {

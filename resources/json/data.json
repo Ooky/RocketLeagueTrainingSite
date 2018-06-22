@@ -1,4 +1,26 @@
 {
+  "videoInfo": [{
+      "time": "20"
+    },
+    {
+      "time": "5"
+    },
+    {
+      "time": "5"
+    },
+    {
+      "time": "5"
+    },
+    {
+      "time": "5"
+    },
+    {
+      "time": "5"
+    },
+    {
+      "time": "10"
+    }
+  ],
   "backgrounds": [{
       "name": "rl_background01.png"
     },
