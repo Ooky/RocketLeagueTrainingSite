@@ -49,20 +49,24 @@ function addTextToVideos() {
 }
 
 function playVideo() {
-  videos[this.id - startTile].play();
-  for (let i = 0; i < videos.length; i++) {
-    videos[i].style.opacity = "0.3";
-    pText[i].style. opacity = "0.1";
+  if (!isMaximazed) {
+    videos[this.id - startTile].play();
+    for (let i = 0; i < videos.length; i++) {
+      videos[i].style.opacity = "0.3";
+      pText[i].style.opacity = "0.1";
+    }
+    videos[this.id - startTile].style.opacity = "1";
+    pText[this.id - startTile].style.opacity = "0.4";
   }
-  videos[this.id - startTile].style.opacity = "1";
-  pText[this.id - startTile].style. opacity = "0.5";
 }
 
 function pauseVideo() {
-  videos[this.id - startTile].pause();
-  for (let i = 0; i < videos.length; i++) {
-    videos[i].style.opacity = "0.8";
-    pText[i].style. opacity = "0.7";
+  if (!isMaximazed) {
+    videos[this.id - startTile].pause();
+    for (let i = 0; i < videos.length; i++) {
+      videos[i].style.opacity = "0.8";
+      pText[i].style.opacity = "0.6";
+    }
   }
 }
 
@@ -99,11 +103,12 @@ function tileInfo() {
       if (this.id != trainingTiles[i].id) {
         trainingTiles[i].style.display = "none";
       } else {
-
         this.style.gridArea = "1 / 1 / -1 / -1";
+        videos[i].play();
       }
       this.firstChild.width = this.offsetWidth;
       this.firstChild.height = this.offsetHeight;
+
     }
     isMaximazed = true;
     //Minimize Tile
@@ -113,6 +118,7 @@ function tileInfo() {
       trainingTiles[i].style.gridArea = "auto";
       trainingTiles[i].firstChild.width = oldTileWidth;
       trainingTiles[i].firstChild.height = oldTileHeight;
+      videos[i].pause();
     }
     isMaximazed = false;
   }
