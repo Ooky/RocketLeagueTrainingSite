@@ -8,6 +8,7 @@ let oldTileWidth;
 let oldTileHeight;
 let tileBoundariesSet = false;
 let videos = null;
+const startTile = 2;
 
 
 startFunction();
@@ -26,18 +27,17 @@ function startFunction() {
 
 function addTextToVideos() {
   if (jsonObject != null) {
-    let div = document.createElement("div");
-    div.setAttribute("class", "videoText");
-    let element = document.getElementById("grid-item2");
-    element.appendChild(div);
-    let br = document.createElement("br");
-    let pTag = document.createElement("p");
-    let description = document.createTextNode("Dribbling");
-    let time = document.createTextNode("20min");
-    pTag.appendChild(description);
-    pTag.appendChild(br);
-    pTag.appendChild(time);
-    div.appendChild(pTag);
+    for (let i = 0; i < trainingTiles.length; i++) {
+      let id = "grid-item" + (i + startTile);
+      let div = document.createElement("div");
+      div.setAttribute("class", "videoText");
+      let element = document.getElementById(id);
+      element.appendChild(div);
+      let pTag = document.createElement("p");
+      let description = document.createTextNode(jsonObject.videoInfo[i].time);
+      pTag.appendChild(description);
+      div.appendChild(pTag);
+    }
   } else {
     window.setTimeout(addTextToVideos, 100);
   }
@@ -115,7 +115,6 @@ function addVideosToHTML() {
   let width = getWidthOfTile(trainingTiles[0].id) + 1;
   let height = getHeightOfTile("grid-item2") + 1;
   if (jsonObject != null) {
-    let startTile = 2;
     for (let i = 0; i < trainingTiles.length; i++) {
       let id = "grid-item" + (i + startTile);
       let video = document.createElement("video");
