@@ -4,6 +4,9 @@ let gridContainerTilesChildNodes = document.getElementsByClassName("grid-contain
 let trainingTiles = [];
 let isMaximazed = false;
 let jsonObject = null;
+let oldTileWidth;
+let oldTileHeight;
+let tileBoundariesSet = false;
 
 
 startFunction();
@@ -15,31 +18,68 @@ function startFunction() {
   centerTileText();
   setBackground();
   initTrainingTiles();
-  addEventListenerToGridTiles();
   addVideosToHTML();
+  addEventListenerToGridTiles();
 }
 
 function playVideo() {
   this.play();
 }
-function pauseVideo(){
+
+function pauseVideo() {
   this.pause();
 }
 
 function resizeVideos() {
   let elements = document.getElementsByClassName("grid-tiles");
-  for(let i = 0; i< elements.length; i++) {
+  for (let i = 0; i < elements.length; i++) {
     elements[i].style.height = "20vh";
     // elements[i].style.width = "calc(100vw -12%)";
   }
-
-
   let videos = document.getElementsByTagName("video");
   let width = getWidthOfTile(trainingTiles[0].id);
   let height = getHeightOfTile("grid-item2");
   for (let i = 0; i < videos.length; i++) {
     videos[i].width = width;
     videos[i].height = height;
+  }
+}
+
+
+
+function tileInfo() {
+  if (!tileBoundariesSet) {
+    if (this.id == 0) {
+      oldTileWidth = trainingTiles[0].offsetWidth;
+      oldTileHeight = trainingTiles[0].offsetHeight;
+    } else {
+      oldTileWidth = trainingTiles[1].offsetWidth;
+      oldTileHeight = trainingTiles[1].offsetHeight;
+    }
+    tileBoundariesSet = true;
+  }
+  if (!isMaximazed) {
+    //Maximize Tile
+    for (let i = 0; i < trainingTiles.length; i++) {
+      if (this.id != trainingTiles[i].id) {
+        trainingTiles[i].style.display = "none";
+      } else {
+
+        this.style.gridArea = "1 / 1 / -1 / -1";
+      }
+      this.firstChild.width = this.offsetWidth;
+      this.firstChild.height = this.offsetHeight;
+    }
+    isMaximazed = true;
+    //Minimize Tile
+  } else {
+    for (let i = 0; i < trainingTiles.length; i++) {
+      trainingTiles[i].style.display = "inline";
+      trainingTiles[i].style.gridArea = "auto";
+      trainingTiles[i].firstChild.width = oldTileWidth;
+      trainingTiles[i].firstChild.height = oldTileHeight;
+    }
+    isMaximazed = false;
   }
 }
 
@@ -94,27 +134,6 @@ function addEventListenerToGridTiles() {
   for (let i = 0; i < trainingTiles.length; i++) {
     let id = "grid-item" + (i + startTileID);
     document.getElementById(id).addEventListener("click", tileInfo);
-  }
-}
-
-function tileInfo() {
-  if (!isMaximazed) {
-    //Maximize Tile
-    for (let i = 0; i < trainingTiles.length; i++) {
-      if (this.id != trainingTiles[i].id) {
-        trainingTiles[i].style.display = "none";
-      } else {
-        this.style.gridArea = "1 / 1 / -1 / -1";
-      }
-    }
-    isMaximazed = true;
-    //Minimize Tile
-  } else {
-    for (let i = 0; i < trainingTiles.length; i++) {
-      trainingTiles[i].style.display = "inline";
-      trainingTiles[i].style.gridArea = "auto";
-    }
-    isMaximazed = false;
   }
 }
 
