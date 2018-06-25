@@ -1,63 +1,75 @@
 {
-  "videoInfo": [{
+  "trainingBlocks": [{
       "time": "20",
       "description": "Dribble Challenge 2.0",
-      "ballcam" : "no"
+      "ballcam" : "no",
+      "webm" : "Training01-20min.webm"
     },
     {
       "time": "5",
       "description": "Fly around",
-      "ballcam" : "no"
+      "ballcam" : "no",
+      "webm" : "Training02-5min.webm"
     },
     {
       "time": "5",
       "description": "Fly around Ball",
-      "ballcam" : "yes"
+      "ballcam" : "yes",
+      "webm" : "Training03-5min.webm"
     },
     {
       "time": "5",
       "description": "Fly around Ball",
-      "ballcam" : "yes"
+      "ballcam" : "yes",
+      "webm" : "Training04-5min.webm"
     },
     {
       "time": "5",
       "description": "Fly around Field",
-      "ballcam" : "no"
+      "ballcam" : "no",
+      "webm" : "Training05-5min.webm"
     },
     {
       "time": "5",
       "description": "Fly around Field",
-      "ballcam" : "no"
+      "ballcam" : "no",
+      "webm" : "Training06-5min.webm"
     },
     {
       "time": "5",
       "description": "Ground slides",
-      "ballcam" : "no"
+      "ballcam" : "no",
+      "webm" : "Training07-5min.webm"
     },
     {
       "time": "5",
       "description": "Half Flip",
-      "ballcam" : "both"
+      "ballcam" : "both",
+      "webm" : "Training08-5min.webm"
     },
     {
       "time": "5",
       "description": "Trainer: Toonfish",
-      "ballcam" : "yes"
+      "ballcam" : "yes",
+      "webm" : "Training09-5min.webm"
     },
     {
       "time": "5",
       "description": "Trainer: Kevpert Wall Powerclears",
-      "ballcam" : "yes"
+      "ballcam" : "yes",
+      "webm" : "Training10-5min.webm"
     },
     {
       "time": "5",
       "description": "Trainer: Kevpert Back Wall Defense",
-      "ballcam" : "yes"
+      "ballcam" : "yes",
+      "webm" : "Training11-5min.webm"
     },
     {
       "time": "10",
       "description": "Biddles Consistency",
-      "ballcam" : "yes"
+      "ballcam" : "yes",
+      "webm" : "Training12-5min.webm"
     }
   ],
   "backgrounds": [{
@@ -80,43 +92,6 @@
     },
     {
       "name": "rl_background07.jpg"
-    }
-  ],
-  "webms": [{
-      "name": "Training01-20min.webm"
-    },
-    {
-      "name": "Training02-5min.webm"
-    },
-    {
-      "name": "Training03-5min.webm"
-    },
-    {
-      "name": "Training04-5min.webm"
-    },
-    {
-      "name": "Training05-5min.webm"
-    },
-    {
-      "name": "Training06-5min.webm"
-    },
-    {
-      "name": "Training07-5min.webm"
-    },
-    {
-      "name": "Training08-5min.webm"
-    },
-    {
-      "name": "Training09-5min.webm"
-    },
-    {
-      "name": "Training10-5min.webm"
-    },
-    {
-      "name": "Training11-5min.webm"
-    },
-    {
-      "name": "Training12-5min.webm"
     }
   ]
 }

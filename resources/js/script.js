@@ -38,7 +38,7 @@ function addTextToVideos() {
       let element = document.getElementById(id);
       element.appendChild(div);
       let pTag = document.createElement("p");
-      let description = document.createTextNode(jsonObject.videoInfo[i].time);
+      let description = document.createTextNode(jsonObject.trainingBlocks[i].time);
       pTag.appendChild(description);
       div.appendChild(pTag);
     }
@@ -142,7 +142,7 @@ function addVideosToHTML() {
       video.setAttribute("muted", "");
 
       let source = document.createElement("source");
-      source.setAttribute("src", "resources/videos/webm/" + jsonObject.webms[i].name);
+      source.setAttribute("src", "resources/videos/webm/" + jsonObject.trainingBlocks[i].webm);
       source.setAttribute("type", "video/webm");
       let element = document.getElementById(id);
       video.appendChild(source);
